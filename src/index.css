@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glassmorphism helpers */
+.glass {
+  @apply bg-white/50 dark:bg-white/10 backdrop-blur-md shadow-glass border border-white/30 dark:border-white/10 rounded-2xl;
+}
+
+.card-hover {
+  @apply transition-transform duration-200 ease-out hover:-translate-y-0.5 hover:shadow-xl;
+}
+
+.link-hover {
+  @apply transition-colors hover:text-primary-500;
+}
+
+/* Form control defaults for good contrast across themes */
+@layer base {
+  select,
+  input,
+  textarea {
+    @apply text-gray-900 dark:text-white bg-white dark:bg-gray-800 border border-gray-300 dark:border-white/10 rounded-lg;
+  }
+
+  /* Ensure dropdown list items inherit readable colors */
+  select option {
+    @apply text-gray-900 dark:text-white bg-white dark:bg-gray-800;
+  }
+
+  /* Placeholder color for readability */
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-gray-400 dark:text-gray-400;
+  }
+}
